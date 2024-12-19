@@ -6,9 +6,9 @@ import './App.css'
 function App() {
   const [word, setWord] = useState("")
   const[difi,setDifi]=useState([])
-  const apil=`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+  const API_URL = import.meta.env.VITE_DICTIONARY_API;
   function api(){
-    fetch(apil)
+    fetch(`${API_URL}/${word}`)
     .then(res=>{return res.json()})
     .then(res=>{
       const defi = [];
